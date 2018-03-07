@@ -1,0 +1,55 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+<script type="text/javascript"><!--
+myQA = new Array(	// 問題テーブル
+"義務教育",	"Schulpflicht",
+"教室",	"Klassenzimmer",
+"入学試験",	"Aufnahmenprufungen",
+"団結心",	"Gemeinschaftsgefuhl",
+"部活動",	"Cliubaktivitatan",
+"川",	"river",
+"山",	"mountain",
+"道路",	"road",
+"家",	"house",
+"スクリプト",	"script"
+);
+
+exampleSentence = new Array(	// 問題テーブル
+"義務教育",	"Schulpflicht",
+"教室",	"Klassenzimmer",
+"入学試験",	"Aufnahmenprufungen",
+"団結心",	"Gemeinschaftsgefuhl",
+"部活動",	"Cliubaktivitatan",
+"川",	"river",
+"山",	"mountain",
+"道路",	"road",
+"家",	"house",
+"スクリプト",	"script"
+);
+
+myNowCnt = 0;
+myLastCnt = myQA.length / 2;
+
+function myQues(){
+  myA = prompt("問題:"+myQA[myNowCnt*2],"");
+  if (myA !=null) {
+    if (myA ==myQA[myNowCnt*2+1]) {
+
+        alert("正解！　"+myQA[myNowCnt*2]+"　は　"+myQA[myNowCnt*2+1]+" です！");
+          myNowCnt=(myNowCnt==myLastCnt-1)?0:myNowCnt+1;
+      }else{	// スペル間違った
+          alert("はずれ！　"+myQA[myNowCnt*2]+"　は　"+myQA[myNowCnt*2+1]+" です！");
+      }
+      myQues();
+    }
+
+  }
+
+
+
+</script>
+<form name="myForm">
+<input type="button" value="英単語の勉強を始める" onclick="myQues()">
+</form>
